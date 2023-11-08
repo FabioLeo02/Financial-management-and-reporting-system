@@ -55,7 +55,6 @@ a {
     top: 50px;
 }
 
-
 .container:hover {
     transform: scale(1.1);
     background-color: #1B1E59;
@@ -71,5 +70,16 @@ a {
     color: white;  
 }
 
+@media (max-width:480px){
+    .container {
+        max-width: 95vw;
+    }
+}
 
-
+/*
+@media (max-width:768px){
+    .container {
+        max-width: 95vw;
+    }
+}
+*\

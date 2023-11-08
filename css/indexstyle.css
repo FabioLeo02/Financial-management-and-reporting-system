@@ -13,10 +13,11 @@ body {
 .container {
     display: flex;
     width: 600px; /* Tamanho do container */
-    height: 300px; /* Altura do container */
+    /*height: 300px; Altura do container */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .left-side {
@@ -28,19 +29,21 @@ body {
 
 .logo img {
     position: relative;
-    left: 80px;
+    left: 65px;
     max-width: 80%;
     height: auto;
+    display: flex;
+    padding: 20px 0;
 }
 
 .right-side {
     position: relative;
-    left: 30px;
     bottom: 20px;
     flex: 2;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 0;
 }
 
 .login-form {
@@ -89,4 +92,26 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        max-width: 95vw;
+    }
+
+    .logo img {
+        left: 50px;
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        flex-direction: column;
+        max-width: 95vw;
+    }
+
+    .logo img {
+        left: 50px;
+    }
 }

@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-report{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px; /* Tamanho do container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 20%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1B1E59;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="dtInicial"],
+input[type="dtFinal"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
