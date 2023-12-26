@@ -1,0 +1,73 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-form {
+    display: flex;
+}
+
+.sidebar {
+    width: 80%;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -80%;
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-row {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 30%; /* Ocupar toda a largura disponível */
+}
+
+.form-row label {
+    display: block; /* Colocar o label em uma nova linha */
+    margin-bottom: 5px; /* Adicionar algum espaço entre o label e o input */
+}
+
+.form-row input {
+    width: 100%; /* Levar em consideração o padding */
+}
+
+button {
+    width: 110px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1B1E59;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.fecharSidebarBtn {
+    width: 30px;
+}
+
+/* Adaptação para a barra lateral abrir da direita */
+.sidebar {
+    left: auto;
+    right: -80%;
+    transition: right 0.3s ease-in-out;
+}
+
+.sidebar button {
+    right: 10px;
+}

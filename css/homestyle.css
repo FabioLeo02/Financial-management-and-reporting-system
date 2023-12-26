@@ -19,6 +19,7 @@ a {
 
 /* Estilizando a logo */
 .logo img {
+    position: relative;
     width: 150px; /* Ajuste o tamanho conforme necessário */
 }
 

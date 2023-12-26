@@ -5,26 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>H-Check Finance - Gerar Relatorio</title>
     <link rel="stylesheet" href="css/homestyle.css">
-    <link rel="stylesheet" href="css/reportstyle.css">
+    <link rel="stylesheet" href="css/reportstyle.css"> 
 </head>
 <body>
     
     <header>
         <div class="logo">
-            <img src="imgs/LOGO ABEAS sem fundo.png" alt="Logo">
+            <a href="homepage.html">
+                <img src="imgs/LOGO ABEAS sem fundo.png" alt="Logo">
+            </a>
         </div>
     </header>
     
     <div class="container-report">
-        <div>
+        <div class="filter-container">
             <label for="dtInicial">Data Inicial</label>
             <input type="date" id="dtInicial" name="dtInicial" required>
         </div>
-        <div>
+        <div class="filter-container">
             <label for="dtFinal">Data Final</label>
             <input type="date" id="dtFinal" name="dtFinal" required>
         </div>
+        <div class="filter-container">
             <button type="submit">Buscar</button>
+        </div>
     </div>
+
+    <div class="report-container">
+        <table class="report-table">
+            <!-- Adicione as colunas e linhas da tabela conforme necessário -->
+        </table>
+    </div>
+
 </body>
 </html>

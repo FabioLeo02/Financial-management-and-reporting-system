@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de Pagamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow: hidden; /* Para esconder a barra lateral inicialmente */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 0;
+            height: 100%;
+            background-color: #111;
+            overflow-y: auto;
+            transition: 0.5s;
+            padding-top: 60px;
+            position: fixed;
+            right: 0; /* Posiciona à direita */
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, auto); /* Aumentei para 5 linhas para ilustração */
+            gap: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px; /* Adicionei um pouco de espaço interno */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            grid-column: span 4;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    </header>
+
+    <div class="container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <form>
+                <label for="employeeName">Nome do Funcionário:</label>
+                <input type="text" id="employeeName" name="employeeName" required>
+
+                <label for="salary">Salário:</label>
+                <input type="number" id="salary" name="salary" required>
+
+                <label for="personal">Pessoal Próprio:</label>
+                <input type="number" id="personal" name="personal" required>
+
+                <label for="socialCharges">Encargos Sociais:</label>
+                <input type="number" id="socialCharges" name="socialCharges" required>
+
+                <label for="provision13">Provisão 13º:</label>
+                <input type="number" id="provision13" name="provision13" required>
+
+                <label for="provisionVacation">Provisão de Férias:</label>
+                <input type="number" id="provisionVacation" name="provisionVacation" required>
+
+                <label for="taxProvision13">Impostos S/ Provisão 13º:</label>
+                <input type="number" id="taxProvision13" name="taxProvision13" required>
+
+                <label for="taxProvisionVacation">Imposto S/ Provisão Férias:</label>
+                <input type="number" id="taxProvisionVacation" name="taxProvisionVacation" required>
+
+                <label for="stpj">STPJ:</label>
+                <input type="number" id="stpj" name="stpj" required>
+
+                <label for="rent">Aluguéis:</label>
+                <input type="number" id="rent" name="rent" required>
+
+                <label for="medicalServicesPJ">Serviço Médicos PJ:</label>
+                <input type="number" id="medicalServicesPJ" name="medicalServicesPJ" required>
+
+                <label for="matMed">Mat/Med:</label>
+                <input type="number" id="matMed" name="matMed" required>
+
+                <label for="dirExpenses">Despesas Diretas:</label>
+                <input type="number" id="dirExpenses" name="dirExpenses" required>
+
+                <label for="taxes">Impostos:</label>
+                <input type="number" id="taxes" name="taxes" required>
+
+                <label for="finExpenses">Despesas Financeiras:</label>
+                <input type="number" id="finExpenses" name="finExpenses" required>
+
+                <label for="water">Água:</label>
+                <input type="number" id="water" name="water" required>
+
+                <label for="electricity">Energia Elétrica:</label>
+                <input type="number" id="electricity" name="electricity" required>
+
+                <label for="phone">Telefone:</label>
+                <input type="number" id="phone" name="phone" required>
+
+                <label for="lpg">GLP:</label>
+                <input type="number" id="lpg" name="lpg" required>
+
+                <label for="gasoline">Gasolina:</label>
+                <input type="number" id="gasoline" name="gasoline" required>
+
+                <label for="medicalGases">Gases Medicinais:</label>
+                <input type="number" id="medicalGases" name="medicalGases" required>
+
+                <label for="medicalServicesPF">Serviço Médico P.F.:</label>
+                <input type="number" id="medicalServicesPF" name="medicalServicesPF" required>
+
+                <button type="submit">Calcular Folha de Pagamento</button>
+            </form>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="content">
+            <button onclick="openNav()">Novo Relatório</button>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.querySelector(".sidebar").style.width = "80%";
+            document.body.style.overflow = "hidden"; // Impede o scroll na página principal
+        }
+
+        function closeNav() {
+            document.querySelector(".sidebar").style.width = "0";
+            document.body.style.overflow = "visible"; // Permite o scroll na página principal
+        }
+    </script>
+
+</body>
+</html>
